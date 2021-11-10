@@ -1,0 +1,21 @@
+.article-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.article-card {
+  height: 5em;
+  width: 95vw;
+  background-color: #1f4068;
+  border-radius: 1em;
+  color: white;
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+.article-card:hover {
+  background-color: #1f12bf;
+}
