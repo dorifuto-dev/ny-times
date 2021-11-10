@@ -29,10 +29,10 @@ const App = () => {
     <main className='app-main'>
       <Routes>
         <Route exact path='/'
-          element={<ArticleContainer articles={allArticles}/>} 
+          element={<ArticleContainer articles={allArticles} />} 
         />
         <Route exact path='/:id'
-          element={<ArticleDetails />}
+          element={<ArticleDetails articles={allArticles} />}
         />
       </Routes>
     </main>
