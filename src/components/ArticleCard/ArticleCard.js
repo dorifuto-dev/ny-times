@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ArticleCard.scss';
 
-const ArticleCard = (props) => {
+const ArticleCard = ({articleInfo}) => {
   return (
-    <Link to={`/${article.id}`} className="article-card-link">
+    <Link to={`/${articleInfo.id}`} className="article-card-link">
       <section className="article-card">
-        <p className="article-card-heading"></p>
+        <h1 className="article-card-title">{articleInfo.title}</h1>
         <p className="article-card-content"></p>
       </section>
     </Link>
