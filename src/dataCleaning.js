@@ -6,8 +6,7 @@ export const cleanArticleData = (data) => {
       updated: article.updated,
       byline: article.byline,
       title: article.title,
-      content: article.abstract,
-      media: article.media
+      content: article.abstract
     }
   })
 }
