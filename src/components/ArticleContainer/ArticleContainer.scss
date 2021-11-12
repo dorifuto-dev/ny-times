@@ -1,10 +1,3 @@
-.article-container-title {
-  margin: 1em;
-  color: white;
-  font-family: 'UnifrakturCook', cursive;
-  font-size: 2.5em;
-}
-
 .search-input {
   padding: 0.5em 5em;
   border-radius: 1em;
@@ -19,4 +12,13 @@
   border: 0;
   font-size: 1em;
   cursor: pointer;
+}
+
+.spinner-loader {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40vh;
+  margin-right: auto;
+  margin-left: auto;
 }

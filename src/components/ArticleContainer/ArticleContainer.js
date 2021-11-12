@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import ArticleCard from '../ArticleCard/ArticleCard'
+import ArticleCard from '../ArticleCard/ArticleCard';
+import Loader from 'react-loader-spinner';
 import './ArticleContainer.scss';
 
-const ArticleContainer = ({ articles }) => {
+const ArticleContainer = ({ articles, isLoading }) => {
   const [searchQuery, setSearchQuery] = useState('')
 
   const articlesList = articles && articles.filter(article => {
@@ -19,10 +20,16 @@ const ArticleContainer = ({ articles }) => {
 
   return (
     <section className='article-container'>
-      <h1 className='article-container-title'>New York Times Popular Articles</h1>
       <input className='search-input' value={searchQuery} placeholder='Search Articles' onChange={(event) => setSearchQuery(event.target.value)}></input>
       {searchQuery && <button className='clear-search' onClick={() => setSearchQuery('')}>Clear Search</button>}
-      {articles && articlesList}
+      {(!isLoading) ? articlesList : 
+        <Loader
+          className='spinner-loader'
+          type='Oval'
+          color='#00BFFF'
+          height={100}
+          width={100}
+        />}
     </section>
   );
 }
