@@ -22,14 +22,16 @@ const App = () => {
       .then(data => cleanArticleData(data))
       .then(data => setAllArticles(data))
       .catch(error => setArticlesError(error.message));
-    setIsLoading(false)
+    setTimeout(() => {setIsLoading(false)}, 1000);
   }
 
   return (
     <main className='app-main'>
+      <h1 className='article-container-title'>New York Times Popular Articles</h1>
+
       <Routes>
         <Route exact path='/'
-          element={<ArticleContainer articles={allArticles} />} 
+          element={<ArticleContainer articles={allArticles} isLoading={isLoading}/>} 
         />
         <Route exact path='/:id'
           element={<ArticleDetails articles={allArticles} />}

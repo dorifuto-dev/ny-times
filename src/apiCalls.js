@@ -1,5 +1,5 @@
 export const fetchPopularArticles = () => {
-  return fetch('https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=z9m1PefYQvBWOZQW7IO1gsVWad6AaqfR')
+  return fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=z9m1PefYQvBWOZQW7IO1gsVWad6AaqfR')
     .then(response => {
       if (response.ok) {
         return response.json()
@@ -8,3 +8,8 @@ export const fetchPopularArticles = () => {
       }
   })
 }
+
+
+
+// https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=z9m1PefYQvBWOZQW7IO1gsVWad6AaqfR
+// MOST POPULAR ENDPOINT

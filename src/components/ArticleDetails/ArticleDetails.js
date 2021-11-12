@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { LoremIpsum } from 'lorem-ipsum';
 import './ArticleDetails.scss';
 
 const ArticleDetails = ({articles}) => {
@@ -20,17 +19,6 @@ const ArticleDetails = ({articles}) => {
     }
   }
 
-  const lorem = new LoremIpsum({
-    sentencesPerParagraph: {
-      max: 8,
-      min: 4
-    },
-    wordsPerSentence: {
-      max: 16,
-      min: 4
-    }
-  })
-
   return (
     <section className='article-details'>
       {selectedArticle && 
@@ -39,10 +27,12 @@ const ArticleDetails = ({articles}) => {
           <p className='detail-author'>{selectedArticle.byline}</p>
           <p className='detail-published'>{`Published on ${selectedArticle.date}`}</p>
           <div className='content-container'>
-            <span className='detail-content'>{selectedArticle.content}</span>
-            <span className='detail-lorem'>{lorem.generateParagraphs(4)}</span>
+            <p className='detail-content'>{selectedArticle.content}</p>
           </div>
-          <Link className='back-home' to='/'>Back to Home</Link>
+          <div className='detail-links'>
+            <a className='ny-times-link' target='_blank' href={selectedArticle.url}>View article on www.nytimes.com</a>
+            <Link className='back-home' to='/'>Back to Home</Link>
+          </div>
         </>}
     </section>
   );
